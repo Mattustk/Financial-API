@@ -1,9 +1,9 @@
 ﻿from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
 from sqlalchemy import func
-from database import engine, get_db
-from schemas import TransactionCreate, Transaction
-import models
+from app.database import engine, get_db
+from app.schemas import TransactionCreate, Transaction
+from app import models
 
 models.Base.metadata.create_all(bind=engine)
 
