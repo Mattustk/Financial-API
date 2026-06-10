@@ -52,7 +52,7 @@ def get_summary(db: Session = Depends(get_db)):
 def delete_transaction(id: int, db: Session = Depends(get_db)):
     transaction = db.query(models.Transaction).filter(models.Transaction.id == id).first()
     if transaction is None:
-        raise HTTPException(status_code=404, detail="TransaÃ§Ã£o nÃ£o encontrada")
+        raise HTTPException(status_code=404, detail="Transação não encontrada")
     db.delete(transaction)
     db.commit()
     return {"message": "id apagado"}
