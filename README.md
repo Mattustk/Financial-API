@@ -1,6 +1,6 @@
 # API de Controle e Análise Financeira Pessoal
 
-API RESTful desenvolvida em Python com **FastAPI** para gerenciamento de transações financeiras e geração de insights agregados de gastos. 
+API REST desenvolvida em Python com **FastAPI** para gerenciamento de transações financeiras e geração de insights agregados de gastos. 
 
  **Link da API Rodando ao Vivo (Swagger UI):** https://financial-api-production.up.railway.app/docs
 
