@@ -9,3 +9,4 @@ class TransactionCreate(BaseModel):
 
 class Transaction(TransactionCreate):
     id: int
+    model_config = {"from_attributes": True}
