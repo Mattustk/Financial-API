@@ -48,4 +48,4 @@ Execute a aplicação:
 ```bash
 uvicorn app.main:app --reload
 ```
-Acesse localmente em: https://financial-api-production.up.railway.app/docs
+
