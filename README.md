@@ -7,3 +7,6 @@ API financeira com CRUD completo criada com FastAPI e SQLAlchemy.
 ```bash
 uvicorn app.main:app --reload
 ```
+
+## 🌐 API ao vivo
+https://financial-api-production.up.railway.app/docs
