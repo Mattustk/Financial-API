@@ -1,9 +1,9 @@
 ﻿from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
 from sqlalchemy import func
-from .database import engine, get_db
-from .schemas import TransactionCreate, Transaction
-from . import models
+from database import engine, get_db
+from schemas import TransactionCreate, Transaction
+import models
 
 models.Base.metadata.create_all(bind=engine)
 
@@ -52,7 +52,7 @@ def get_summary(db: Session = Depends(get_db)):
 def delete_transaction(id: int, db: Session = Depends(get_db)):
     transaction = db.query(models.Transaction).filter(models.Transaction.id == id).first()
     if transaction is None:
-        raise HTTPException(status_code=404, detail="TransaÃ§Ã£o nÃ£o encontrada")
+        raise HTTPException(status_code=404, detail="Transação não encontrada")
     db.delete(transaction)
     db.commit()
     return {"message": "id apagado"}
@@ -61,7 +61,7 @@ def delete_transaction(id: int, db: Session = Depends(get_db)):
 def update_transaction(id: int, dados_novos: TransactionCreate, db: Session = Depends(get_db)):
     transaction = db.query(models.Transaction).filter(models.Transaction.id == id).first()
     if transaction is None:
-        raise HTTPException(status_code=404, detail="TransaÃ§Ã£o nÃ£o encontrada")
+        raise HTTPException(status_code=404, detail="Transação não encontrada")
     transaction.descricao = dados_novos.descricao
     transaction.valor = dados_novos.valor
     transaction.categoria = dados_novos.categoria
